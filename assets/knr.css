@@ -146,4 +146,38 @@
     position: static !important;
     margin-left: 0 !important;
   }
+
+  /* Make the menu summary a single stable flex item and overlap its svgs
+     so the close icon doesn't take layout space when hidden. */
+  .knr-test header-drawer > details > summary.header__icon--menu {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    /* do not force widths here — inherit sizing from theme */
+  }
+
+  .knr-test header-drawer > details > summary.header__icon--menu .svg-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none; /* icons shouldn't intercept clicks; summary handles clicks */
+  }
+
+  /* Hide the close icon when drawer is closed, and show the hamburger; when open, reverse. */
+  .knr-test header-drawer > details:not([open]) > summary.header__icon--menu .header__icon-close {
+    display: none !important;
+  }
+
+  .knr-test header-drawer > details[open] > summary.header__icon--menu .svg-wrapper:first-child {
+    display: none !important;
+  }
+
+  .knr-test header-drawer > details[open] > summary.header__icon--menu .header__icon-close {
+    display: flex !important;
+    pointer-events: none;
+  }
 }
