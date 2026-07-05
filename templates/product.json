@@ -18,6 +18,18 @@
             "breadcrumb_text": "Soins anti-âge / Collection Cactus"
           }
         },
+        "badge_mK7ywq": {
+          "type": "badge",
+          "settings": {
+            "badge_text": "UNIFIE"
+          }
+        },
+        "badge_zNUzLQ": {
+          "type": "badge",
+          "settings": {
+            "badge_text": "protège"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -51,6 +63,8 @@
       },
       "block_order": [
         "breadcrumbs_kGEUcB",
+        "badge_mK7ywq",
+        "badge_zNUzLQ",
         "title",
         "price",
         "variant_picker",
