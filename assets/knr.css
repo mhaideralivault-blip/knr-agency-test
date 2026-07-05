@@ -120,7 +120,11 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-end;
-    gap: 8px;
+    gap: 12px;
+  }
+
+  .knr-test .header__icons > * {
+    flex-shrink: 0;
   }
 
   .knr-test .header__icon--cart {
@@ -128,18 +132,18 @@
     margin-right: 0 !important;
   }
 
-  .knr-test .header__icon--menu {
-    order: 2;
-    margin-left: 0 !important;
-    position: static !important;
-  }
-
-  .knr-test header-drawer {
-    order: 2;
-  }
-
   .knr-test .header__icons > header-drawer {
+    order: 2;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+  }
+
+  .knr-test .header__icon--menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: static !important;
+    margin-left: 0 !important;
   }
 }
