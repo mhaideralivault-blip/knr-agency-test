@@ -102,19 +102,4 @@
   .knr-test .header--middle-left {
     grid-template-columns: auto 1fr auto;
   }
-
-  .knr-test .header--mobile-center .header__heading,
-  .knr-test .header--mobile-center .header__heading-link {
-    text-align: left;
-    justify-self: start;
-  }
-
-  .knr-test .header--mobile-center {
-    grid-template-columns: auto 2fr 1fr;
-  }
-
-  .knr-test .header__icons > header-drawer {
-    display: inline-flex;
-    align-items: center;
-  }
 }
