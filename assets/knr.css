@@ -115,6 +115,18 @@
     grid-template-columns: auto 2fr 1fr;
   }
 
+  .knr-test .header__icons {
+    flex-wrap: nowrap;
+  }
+
+  .knr-test .header__icon--cart {
+    order: 1;
+  }
+
+  .knr-test header-drawer {
+    order: 2;
+  }
+
   .knr-test .header__icons > header-drawer {
     display: inline-flex;
     align-items: center;
