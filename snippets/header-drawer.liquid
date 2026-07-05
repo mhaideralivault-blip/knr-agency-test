@@ -12,8 +12,15 @@
       aria-label="{{ 'sections.header.menu' | t }}"
     >
       <span>
-        {{- 'icon-hamburger.svg' | inline_asset_content -}}
-        {{- 'icon-close.svg' | inline_asset_content -}}
+        <span class="svg-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="5" viewBox="0 0 16 5" fill="none">
+            <rect width="16" height="1" fill="white"/>
+            <rect y="4" width="16" height="1" fill="white"/>
+          </svg>
+        </span>
+        <span class="svg-wrapper header__icon-close">
+          {{- 'icon-close.svg' | inline_asset_content -}}
+        </span>
       </span>
     </summary>
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
