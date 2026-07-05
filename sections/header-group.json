@@ -11,31 +11,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement_bar_hB4DQm": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement_FmA63t": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement_FmA63t"
-      ],
-      "name": "t:sections.announcement-bar.presets.name",
-      "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
-      }
-    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -50,6 +25,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -58,6 +34,17 @@
         "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false
+      }
+    },
+    "knr_announcement_bar_TxJwtH": {
+      "type": "knr-announcement-bar",
+      "name": "KNR Announcement Bar",
+      "settings": {
+        "main_text": "Livraison estimée sous 48h",
+        "highlighted_text": "consectetur.",
+        "background_color": "#000000",
+        "text_color": "#FFFFFF",
+        "border_width": 1
       }
     },
     "header": {
@@ -81,8 +68,8 @@
     }
   },
   "order": [
-    "announcement_bar_hB4DQm",
     "announcement-bar",
+    "knr_announcement_bar_TxJwtH",
     "header"
   ]
 }

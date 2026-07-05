@@ -84,9 +84,55 @@
     },
     "disclosures": {
       "type": "disclosures",
+      "disabled": true,
       "settings": {
+        "heading": "Disclosures",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 0
+      }
+    },
+    "knr_how_to_use_GFVH99": {
+      "type": "knr-how-to-use",
+      "blocks": {
+        "card_pRaCFQ": {
+          "type": "card",
+          "settings": {
+            "step_number": "01",
+            "title": "Découvrir",
+            "description": "Concentré de pureté active. Huile végétale aux propriétés anti-oxydantes puissantes pour un éclat retrouvé."
+          }
+        },
+        "card_AFmJJx": {
+          "type": "card",
+          "settings": {
+            "step_number": "02",
+            "title": "Découvrir",
+            "description": "Éclat et uniformité retrouvés. Cible les taches et les irrégularités de grain de peau."
+          }
+        },
+        "card_YfQV9E": {
+          "type": "card",
+          "settings": {
+            "step_number": "03",
+            "title": "Découvrir",
+            "description": "Fermeté et nutrition intense. Répare la barrière cutanée et lisse les contours du visage."
+          }
+        }
+      },
+      "block_order": [
+        "card_pRaCFQ",
+        "card_AFmJJx",
+        "card_YfQV9E"
+      ],
+      "name": "How To Use",
+      "settings": {
+        "heading": "How to use",
+        "background_color": "#ffffff",
+        "top_padding": 80,
+        "bottom_padding": 80
       }
     },
     "related-products": {
@@ -111,6 +157,7 @@
   "order": [
     "main",
     "disclosures",
+    "knr_how_to_use_GFVH99",
     "related-products"
   ]
 }
