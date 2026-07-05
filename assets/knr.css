@@ -5,14 +5,13 @@
 
 /* Header overrides */
 @media screen and (min-width: 990px) {
-  .header--top-center .header__inline-menu,
-  .header--middle-center .header__inline-menu {
-    justify-self: center;
+  .header__inline-menu {
+    justify-self: center !important;
+    margin-left: 0 !important;
   }
 
-  .header--top-center .header__inline-menu > .list-menu--inline,
-  .header--middle-center .header__inline-menu > .list-menu--inline {
-    justify-content: center;
+  .header__inline-menu > .list-menu--inline {
+    justify-content: center !important;
   }
 }
 
