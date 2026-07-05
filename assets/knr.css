@@ -51,6 +51,18 @@
   vertical-align: middle !important;
 }
 
+.header__inline-menu .header__menu-item,
+.header__inline-menu .header__menu-item span {
+  font-family: Inter, sans-serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size: 12px !important;
+  line-height: 12px !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
 .header__icon .svg-wrapper,
 .header__icon--marker .svg-wrapper {
   display: flex;
