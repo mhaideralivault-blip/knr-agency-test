@@ -2,6 +2,10 @@
   background: #DFDBD6;
 }
 
+.knr-test .header {
+  padding: 10px 24px;
+}
+
 /* Base styles (mobile + desktop) */
 .knr-test .header__icon,
 .knr-test .header__menu-item,
