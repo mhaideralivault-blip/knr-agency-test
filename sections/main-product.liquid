@@ -92,6 +92,13 @@
               {%- case block.type -%}
                 {%- when '@app' -%}
                   {% render block %}
+                {%- when 'breadcrumbs' -%}
+                  <p
+                    class="product__breadcrumbs"
+                    {{ block.shopify_attributes }}
+                  >
+                    {{- block.settings.breadcrumb_text -}}
+                  </p>
                 {%- when 'text' -%}
                   <p
                     class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -763,6 +770,19 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "breadcrumbs",
+      "name": "Breadcrumbs",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "breadcrumb_text",
+          "default": "Soins anti-âge / Collection Cactus",
+          "label": "Breadcrumb Text"
+        }
+      ]
     },
     {
       "type": "text",
