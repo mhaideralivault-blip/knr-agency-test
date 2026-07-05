@@ -1,0 +1,736 @@
+
+
+<style>
+  .knr-footer {
+    background: #f8f6f2;
+    color: #111111;
+    font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .knr-footer__inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px 24px 24px;
+  }
+
+  .knr-footer__top {
+    padding-bottom: 2rem;
+  }
+
+  .knr-footer__columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.15fr) minmax(0, 1.15fr) minmax(0, 1.55fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  .knr-footer__column-title {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    color: #111111;
+  }
+
+  .knr-footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .knr-footer__links li + li {
+    margin-top: 0.95rem;
+  }
+
+  .knr-footer__links a {
+    color: #111111;
+    text-decoration: none;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    display: inline-block;
+  }
+
+  .knr-footer__column--about {
+    max-width: 30rem;
+  }
+
+  .knr-footer__about-text {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin: 0 0 1.5rem;
+    color: #111111;
+  }
+
+  .knr-footer__certification {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 1.4rem 0 0;
+  }
+
+  .knr-footer__bio-badge {
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid #111111;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+  }
+
+  .knr-footer__certification-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .knr-footer__certification-title {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.15;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+  }
+
+  .knr-footer__certification-text {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #111111;
+  }
+
+  .knr-footer__divider-inline {
+    width: 100%;
+    max-width: 28rem;
+    height: 1px;
+    background: #d8d2c8;
+    margin: 1.2rem 0 1.05rem;
+  }
+
+  .knr-footer__certificate-link {
+    color: #111111;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    font-size: 1rem;
+    display: inline-block;
+  }
+
+  .knr-footer__wordmark {
+    font-size: clamp(3.8rem, 10vw, 13rem);
+    line-height: 0.95;
+    font-weight: 300;
+    text-transform: lowercase;
+    text-align: center;
+    margin: 3.5rem 0 2.75rem;
+    letter-spacing: -0.02em;
+    color: #000000;
+  }
+
+  .knr-footer__line {
+    height: 1px;
+    background: #d8d2c8;
+    width: 100%;
+    margin-bottom: 1.2rem;
+  }
+
+  .knr-footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    min-height: 3.75rem;
+    padding-top: 0.2rem;
+  }
+
+  .knr-footer__bottom-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .knr-footer__select-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .knr-footer__select-label {
+    font-size: 0.95rem;
+    color: #222222;
+  }
+
+  .knr-footer__select {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .knr-footer__select select {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: #111111;
+    font-size: 0.95rem;
+    padding-right: 1.25rem;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .knr-footer__chevron {
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    font-size: 0.95rem;
+  }
+
+  .knr-footer__bottom-center {
+    flex: 1;
+    text-align: center;
+  }
+
+  .knr-footer__bottom-center p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #222222;
+  }
+
+  .knr-footer__bottom-right {
+    display: flex;
+    align-items: center;
+    gap: 1.35rem;
+  }
+
+  .knr-footer__bottom-right a {
+    color: #111111;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .knr-footer__bottom-right svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  @media screen and (max-width: 990px) {
+    .knr-footer__columns {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.2rem 2rem;
+    }
+
+    .knr-footer__column--about {
+      grid-column: span 2;
+      max-width: none;
+    }
+
+    .knr-footer__bottom {
+      flex-wrap: wrap;
+    }
+
+    .knr-footer__bottom-center {
+      order: 3;
+      flex-basis: 100%;
+      text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .knr-footer__inner {
+      padding: 28px 20px 20px;
+    }
+
+    .knr-footer__columns {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .knr-footer__column--about {
+      grid-column: span 1;
+    }
+
+    .knr-footer__wordmark {
+      margin: 2.6rem 0 2.2rem;
+      font-size: clamp(2.8rem, 14vw, 4.4rem);
+      text-align: left;
+    }
+
+    .knr-footer__bottom {
+      align-items: flex-start;
+      padding-top: 1rem;
+    }
+
+    .knr-footer__bottom-left {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+
+    .knr-footer__bottom-right {
+      width: 100%;
+      justify-content: flex-start;
+      margin-top: 0.6rem;
+    }
+  }
+</style>
+
+
+
+
+<section class="knr-footer" aria-label="Footer">
+  <div class="knr-footer__inner">
+    <div class="knr-footer__top">
+      <div class="knr-footer__columns">
+        <div class="knr-footer__column">
+          {% if section.settings.column_1_heading != blank %}
+            <h2 class="knr-footer__column-title">{{ section.settings.column_1_heading }}</h2>
+          {% endif %}
+          <ul class="knr-footer__links">
+            {% if section.settings.column_1_link_1_text != blank %}
+              <li><a href="{{ section.settings.column_1_link_1_url }}">{{ section.settings.column_1_link_1_text }}</a></li>
+            {% endif %}
+            {% if section.settings.column_1_link_2_text != blank %}
+              <li><a href="{{ section.settings.column_1_link_2_url }}">{{ section.settings.column_1_link_2_text }}</a></li>
+            {% endif %}
+            {% if section.settings.column_1_link_3_text != blank %}
+              <li><a href="{{ section.settings.column_1_link_3_url }}">{{ section.settings.column_1_link_3_text }}</a></li>
+            {% endif %}
+            {% if section.settings.column_1_link_4_text != blank %}
+              <li><a href="{{ section.settings.column_1_link_4_url }}">{{ section.settings.column_1_link_4_text }}</a></li>
+            {% endif %}
+            {% if section.settings.column_1_link_5_text != blank %}
+              <li><a href="{{ section.settings.column_1_link_5_url }}">{{ section.settings.column_1_link_5_text }}</a></li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <div class="knr-footer__column">
+          {% if section.settings.column_2_heading != blank %}
+            <h2 class="knr-footer__column-title">{{ section.settings.column_2_heading }}</h2>
+          {% endif %}
+          <ul class="knr-footer__links">
+            {% if section.settings.column_2_link_1_text != blank %}
+              <li><a href="{{ section.settings.column_2_link_1_url }}">{{ section.settings.column_2_link_1_text }}</a></li>
+            {% endif %}
+            {% if section.settings.column_2_link_2_text != blank %}
+              <li><a href="{{ section.settings.column_2_link_2_url }}">{{ section.settings.column_2_link_2_text }}</a></li>
+            {% endif %}
+            {% if section.settings.column_2_link_3_text != blank %}
+              <li><a href="{{ section.settings.column_2_link_3_url }}">{{ section.settings.column_2_link_3_text }}</a></li>
+            {% endif %}
+            {% if section.settings.column_2_link_4_text != blank %}
+              <li><a href="{{ section.settings.column_2_link_4_url }}">{{ section.settings.column_2_link_4_text }}</a></li>
+            {% endif %}
+            {% if section.settings.column_2_link_5_text != blank %}
+              <li><a href="{{ section.settings.column_2_link_5_url }}">{{ section.settings.column_2_link_5_text }}</a></li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <div class="knr-footer__column">
+          {% if section.settings.column_3_heading != blank %}
+            <h2 class="knr-footer__column-title">{{ section.settings.column_3_heading }}</h2>
+          {% endif %}
+          <ul class="knr-footer__links">
+            {% if section.settings.column_3_link_1_text != blank %}
+              <li><a href="{{ section.settings.column_3_link_1_url }}">{{ section.settings.column_3_link_1_text }}</a></li>
+            {% endif %}
+            {% if section.settings.column_3_link_2_text != blank %}
+              <li><a href="{{ section.settings.column_3_link_2_url }}">{{ section.settings.column_3_link_2_text }}</a></li>
+            {% endif %}
+            {% if section.settings.column_3_link_3_text != blank %}
+              <li><a href="{{ section.settings.column_3_link_3_url }}">{{ section.settings.column_3_link_3_text }}</a></li>
+            {% endif %}
+            {% if section.settings.column_3_link_4_text != blank %}
+              <li><a href="{{ section.settings.column_3_link_4_url }}">{{ section.settings.column_3_link_4_text }}</a></li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <div class="knr-footer__column knr-footer__column--about">
+          {% if section.settings.about_heading != blank %}
+            <h2 class="knr-footer__column-title">{{ section.settings.about_heading }}</h2>
+          {% endif %}
+          {% if section.settings.about_text != blank %}
+            <p class="knr-footer__about-text">{{ section.settings.about_text }}</p>
+          {% endif %}
+
+          <div class="knr-footer__certification" aria-label="Certification">
+            <div class="knr-footer__bio-badge" aria-hidden="true">
+              <span>BIO</span>
+            </div>
+            <div class="knr-footer__certification-copy">
+              <p class="knr-footer__certification-title">COSMOS<br>ORGANIC</p>
+              {% if section.settings.certification_text != blank %}
+                <p class="knr-footer__certification-text">{{ section.settings.certification_text }}</p>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="knr-footer__divider-inline"></div>
+
+          {% if section.settings.certificate_link_text != blank %}
+            <a class="knr-footer__certificate-link" href="{{ section.settings.certificate_link_url }}">{{ section.settings.certificate_link_text }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="knr-footer__wordmark">{{ section.settings.brand_wordmark }}</div>
+
+    <div class="knr-footer__line"></div>
+
+    <div class="knr-footer__bottom">
+      <div class="knr-footer__bottom-left">
+        <div class="knr-footer__select-wrap">
+          <label class="knr-footer__select-label" for="knr-footer-currency-{{ section.id }}">{{ section.settings.currency_label }}</label>
+          <div class="knr-footer__select">
+            <select id="knr-footer-currency-{{ section.id }}" aria-label="Currency">
+              <option>France (€)</option>
+              <option>United Kingdom (£)</option>
+              <option>United States ($)</option>
+            </select>
+            <span class="knr-footer__chevron" aria-hidden="true">⌄</span>
+          </div>
+        </div>
+
+        <div class="knr-footer__select-wrap">
+          <label class="knr-footer__select-label" for="knr-footer-language-{{ section.id }}">{{ section.settings.language_label }}</label>
+          <div class="knr-footer__select">
+            <select id="knr-footer-language-{{ section.id }}" aria-label="Language">
+              <option>Français</option>
+              <option>English</option>
+              <option>Deutsch</option>
+            </select>
+            <span class="knr-footer__chevron" aria-hidden="true">⌄</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="knr-footer__bottom-center">
+        {% if section.settings.copyright_text != blank %}
+          <p>{{ section.settings.copyright_text }}</p>
+        {% endif %}
+      </div>
+
+      <div class="knr-footer__bottom-right" aria-label="Social links">
+        {% if section.settings.social_facebook_link != blank %}
+          <a href="{{ section.settings.social_facebook_link }}" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M13.5 21v-8h2.7l.4-3h-3.1V3.8c0-.9.3-1.5 1.5-1.5h1.6V.2c-.3 0-1.2-.2-2.3-.2-2.3 0-3.9 1.4-3.9 4v2.2H7.7v3h2.7v8h3.1z"></path>
+            </svg>
+          </a>
+        {% endif %}
+        {% if section.settings.social_instagram_link != blank %}
+          <a href="{{ section.settings.social_instagram_link }}" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4.25"></circle>
+              <circle cx="17.5" cy="6.5" r="1"></circle>
+            </svg>
+          </a>
+        {% endif %}
+        {% if section.settings.social_tiktok_link != blank %}
+          <a href="{{ section.settings.social_tiktok_link }}" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 3h2.4a4.3 4.3 0 0 0 4.3 4.3V9a4.8 4.8 0 0 1-4.8 4.8h-.7v4.8a5.6 5.6 0 1 1-5.6-5.6h.8V10a3.7 3.7 0 0 0 3.7 3.7h.1"></path>
+            </svg>
+          </a>
+        {% endif %}
+        {% if section.settings.social_linkedin_link != blank %}
+          <a href="{{ section.settings.social_linkedin_link }}" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 8.5A1.5 1.5 0 1 0 6 5.5a1.5 1.5 0 0 0 0 3z"></path>
+              <path d="M5 9.5h2V19H5z"></path>
+              <path d="M10 9.5h2v1.2h.1c.3-.6 1-1.2 2.1-1.2 2.3 0 2.7 1.5 2.7 3.4V19h-2v-8.2c0-1.9-.1-4.4-2.7-4.4-2.7 0-3.1 2.1-3.1 4.3V19h-2z"></path>
+            </svg>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "KNR Footer",
+  "tag": "section",
+  "class": "knr-footer-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_wordmark",
+      "label": "Brand wordmark",
+      "default": "maison célestine"
+    },
+    {
+      "type": "text",
+      "id": "column_1_heading",
+      "label": "Column 1 heading",
+      "default": "Découvrir"
+    },
+    {
+      "type": "text",
+      "id": "column_1_link_1_text",
+      "label": "Column 1 link 1 text",
+      "default": "Acheter"
+    },
+    {
+      "type": "url",
+      "id": "column_1_link_1_url",
+      "label": "Column 1 link 1 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_1_link_2_text",
+      "label": "Column 1 link 2 text",
+      "default": "Notre histoire"
+    },
+    {
+      "type": "url",
+      "id": "column_1_link_2_url",
+      "label": "Column 1 link 2 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_1_link_3_text",
+      "label": "Column 1 link 3 text",
+      "default": "Science"
+    },
+    {
+      "type": "url",
+      "id": "column_1_link_3_url",
+      "label": "Column 1 link 3 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_1_link_4_text",
+      "label": "Column 1 link 4 text",
+      "default": "Presse"
+    },
+    {
+      "type": "url",
+      "id": "column_1_link_4_url",
+      "label": "Column 1 link 4 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_1_link_5_text",
+      "label": "Column 1 link 5 text",
+      "default": "Où nous trouver"
+    },
+    {
+      "type": "url",
+      "id": "column_1_link_5_url",
+      "label": "Column 1 link 5 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_2_heading",
+      "label": "Column 2 heading",
+      "default": "Service client"
+    },
+    {
+      "type": "text",
+      "id": "column_2_link_1_text",
+      "label": "Column 2 link 1 text",
+      "default": "Mon compte"
+    },
+    {
+      "type": "url",
+      "id": "column_2_link_1_url",
+      "label": "Column 2 link 1 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_2_link_2_text",
+      "label": "Column 2 link 2 text",
+      "default": "Suivre mon colis"
+    },
+    {
+      "type": "url",
+      "id": "column_2_link_2_url",
+      "label": "Column 2 link 2 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_2_link_3_text",
+      "label": "Column 2 link 3 text",
+      "default": "Livraison & retour"
+    },
+    {
+      "type": "url",
+      "id": "column_2_link_3_url",
+      "label": "Column 2 link 3 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_2_link_4_text",
+      "label": "Column 2 link 4 text",
+      "default": "FAQs"
+    },
+    {
+      "type": "url",
+      "id": "column_2_link_4_url",
+      "label": "Column 2 link 4 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_2_link_5_text",
+      "label": "Column 2 link 5 text",
+      "default": "Nous contacter"
+    },
+    {
+      "type": "url",
+      "id": "column_2_link_5_url",
+      "label": "Column 2 link 5 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_3_heading",
+      "label": "Column 3 heading",
+      "default": "Légal & Transparence"
+    },
+    {
+      "type": "text",
+      "id": "column_3_link_1_text",
+      "label": "Column 3 link 1 text",
+      "default": "Conditions générales de vente"
+    },
+    {
+      "type": "url",
+      "id": "column_3_link_1_url",
+      "label": "Column 3 link 1 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_3_link_2_text",
+      "label": "Column 3 link 2 text",
+      "default": "Mentions légales"
+    },
+    {
+      "type": "url",
+      "id": "column_3_link_2_url",
+      "label": "Column 3 link 2 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_3_link_3_text",
+      "label": "Column 3 link 3 text",
+      "default": "Paramètre des cookies"
+    },
+    {
+      "type": "url",
+      "id": "column_3_link_3_url",
+      "label": "Column 3 link 3 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "column_3_link_4_text",
+      "label": "Column 3 link 4 text",
+      "default": "Accessibilité"
+    },
+    {
+      "type": "url",
+      "id": "column_3_link_4_url",
+      "label": "Column 3 link 4 URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "about_heading",
+      "label": "About heading",
+      "default": "À propos de Maison Célestine"
+    },
+    {
+      "type": "textarea",
+      "id": "about_text",
+      "label": "About paragraph",
+      "default": "Maison Célestine est une marque de soins anti-âge haut de gamme formulée autour d’actifs rares et certifiés biologiques, guidée par une expertise médicale et un rituel simple, précis et efficace."
+    },
+    {
+      "type": "text",
+      "id": "certification_text",
+      "label": "Certification label",
+      "default": "Certifié COSMOS ORGANIC par ECOCERT Greenlife"
+    },
+    {
+      "type": "text",
+      "id": "certificate_link_text",
+      "label": "Certificate link text",
+      "default": "Voir le certificat"
+    },
+    {
+      "type": "url",
+      "id": "certificate_link_url",
+      "label": "Certificate link URL",
+       
+    },
+    {
+      "type": "text",
+      "id": "currency_label",
+      "label": "Currency selector label",
+      "default": "France (€)"
+    },
+    {
+      "type": "text",
+      "id": "language_label",
+      "label": "Language selector label",
+      "default": "Français"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "© 2026 Maison Célestine. Tous droits réservés."
+    },
+    {
+      "type": "url",
+      "id": "social_facebook_link",
+      "label": "Facebook link",
+       
+    },
+    {
+      "type": "url",
+      "id": "social_instagram_link",
+      "label": "Instagram link",
+       
+    },
+    {
+      "type": "url",
+      "id": "social_tiktok_link",
+      "label": "TikTok link",
+       
+    },
+    {
+      "type": "url",
+      "id": "social_linkedin_link",
+      "label": "LinkedIn link",
+       
+    }
+  ],
+  "presets": [
+    {
+      "name": "Luxury Footer",
+      "category": "Custom KNR"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,251 @@
+
+ <style>
+    .serum-spotlight-{{ section.id }} {
+      --ss-max-width: 1440px;
+      --ss-desktop-h-pad: 40px;
+      --ss-desktop-v-pad: 80px; 
+      --ss-mobile-h-pad: 24px; 
+      --ss-mobile-v-pad: 48px; 
+    }
+
+
+
+    .serum-spotlight-{{ section.id }} .ss-body,
+    .serum-spotlight-{{ section.id }} .ss-author {
+      color: {{ section.settings.text_color }};
+    }
+
+    .serum-spotlight-{{ section.id }} {
+      padding-top: var(--ss-desktop-v-pad);
+      padding-bottom: var(--ss-desktop-v-pad);
+      box-sizing: border-box;
+      width: 100%;
+background: linear-gradient(90deg, #d5d9d5 0%, #8f8673 100%);
+          font-family: inherit; /* rely on theme font (Inter) */
+    }
+
+    .serum-spotlight-{{ section.id }} .ss-wrap {
+      max-width: var(--ss-max-width);
+      margin: 0 auto;
+      padding-left: 24px; /* global container padding */
+      padding-right: 24px;
+      box-sizing: border-box;
+    }
+
+    .serum-spotlight-{{ section.id }} .ss-inner {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    /* Media (left) and content (right) columns */
+    .serum-spotlight-{{ section.id }} .ss-media,
+    .serum-spotlight-{{ section.id }} .ss-content {
+      box-sizing: border-box;
+      padding-left: var(--ss-desktop-h-pad);
+      padding-right: var(--ss-desktop-h-pad);
+    }
+
+    .serum-spotlight-{{ section.id }} .ss-media {
+      flex: 0 0 60%;
+      position: relative;
+      min-width: 0;
+      z-index: 1;
+    }
+
+    .serum-spotlight-{{ section.id }} .ss-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      object-fit: cover;
+      border-radius: 0; /* image should not be circular */
+      -webkit-border-radius: 0;
+    }
+
+    /* Desktop vs mobile image switching: show desk by default */
+    .serum-spotlight-{{ section.id }} .ss-image--mobile {
+      display: none;
+    }
+
+    .serum-spotlight-{{ section.id }} .ss-image--placeholder {
+      background: #e9e2db; /* neutral placeholder tone */
+      width: 100%;
+      border-radius: 0;
+    }
+
+    /* microcopy removed per request */
+
+    /* Content column styles */
+    .serum-spotlight-{{ section.id }} .ss-content {
+      flex: 0 0 40%;
+      text-align: left;
+      min-width: 0; /* allow text to wrap correctly */
+      z-index: 2; /* ensure text is visible above media overlays */
+      border-radius: 40%; /* content radius per earlier spec */
+      padding-left: var(--ss-desktop-h-pad);
+      padding-right: var(--ss-desktop-h-pad);
+    }
+
+    .serum-spotlight-{{ section.id }} .ss-body {
+      margin: 0;
+      font-family: inherit;
+      font-weight: 400;
+      font-size: 32px; /* desktop */
+      line-height: 40px;
+      letter-spacing: -0.04em;
+    }
+
+    .serum-spotlight-{{ section.id }} .ss-author {
+      margin-top: 12px;
+      font-size: 10px;
+      line-height: 12px;
+      letter-spacing: -0.04em;
+      opacity: 0.95;
+    }
+
+    /* Responsive: stack on small screens */
+    @media screen and (max-width: 749px) {
+      .serum-spotlight-{{ section.id }} {
+        padding-top: var(--ss-mobile-v-pad);
+        padding-bottom: var(--ss-mobile-v-pad);
+      }
+
+      .serum-spotlight-{{ section.id }} .ss-wrap {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .serum-spotlight-{{ section.id }} .ss-inner {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .serum-spotlight-{{ section.id }} .ss-media,
+      .serum-spotlight-{{ section.id }} .ss-content {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .serum-spotlight-{{ section.id }} .ss-media {
+        width: 100%;
+      }
+
+      /* On mobile, hide desktop image and show mobile image (if provided) */
+      .serum-spotlight-{{ section.id }} .ss-image--desk {
+        display: none;
+      }
+
+      .serum-spotlight-{{ section.id }} .ss-image--mobile {
+        display: block;
+      }
+
+      .serum-spotlight-{{ section.id }} .ss-image {
+        border-radius: 20px; /* softer radius on mobile to preserve aspect */
+      }
+
+      /* microcopy removed */
+
+      .serum-spotlight-{{ section.id }} .ss-body {
+        font-size: 22px; /* mobile font size per spec */
+        line-height: 28px;
+      }
+    }
+  </style>
+
+<section id="serum-spotlight-{{ section.id }}" class="serum-spotlight serum-spotlight-{{ section.id }}">
+  <div class="ss-wrap">
+    <div class="ss-inner">
+      <!-- Media column (left) -->
+      <div class="ss-media">
+        {% assign desktop_img = section.settings.image %}
+        {% assign mobile_img = section.settings.mobile_image %}
+
+        {% if desktop_img != blank %}
+          <img
+            src="{{ desktop_img | image_url }}"
+            alt=""
+                 width="100%"
+                height="auto"
+            loading="lazy"
+            class="ss-image ss-image--desk"
+          />
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'ss-image ss-image--desk ss-image--placeholder' | replace: 'width="100%"', 'width="100%"' }}
+        {% endif %}
+
+        {% if mobile_img == blank %}
+          {% assign mobile_img = desktop_img %}
+        {% endif %}
+
+        {% if mobile_img != blank %}
+          <img
+            src="{{ mobile_img | image_url }}"
+            alt=""
+            width="100%"
+            height="auto"
+            loading="lazy"
+            class="ss-image ss-image--mobile"
+          />
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'ss-image ss-image--mobile ss-image--placeholder' }}
+        {% endif %}
+
+        <!-- microcopy removed per request -->
+      </div>
+
+      <!-- Content column (right) -->
+      <div class="ss-content">
+        <p class="ss-body">{{ section.settings.body_text }}</p>
+        {% if section.settings.author != blank %}
+          <div class="ss-author">{{ section.settings.author }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+ 
+
+  {% schema %}
+  {
+    "name": "Serum Spotlight",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Desktop image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile image"
+      },
+      {
+        "type": "textarea",
+        "id": "body_text",
+        "label": "Body text",
+        "default": "Fusionnant l\u2019huile de rosier muscat, le r\u00e9tinol v\u00e9g\u00e9tal et l\u2019extrait de cactus, notre s\u00e9rum p\u00e9n\u00e8tre en profondeur pour stimuler le renouvellement cellulaire, att\u00e9nuer les rides et redonner \u00e0 la peau son \u00e9clat et sa fermet\u00e9 naturels."
+      },
+      {
+        "type": "text",
+        "id": "author",
+        "label": "Author / Credit",
+        "default": "Sophie M."
+      },
+
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#111111"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Serum Spotlight",
+      "category": "Custom KNR"
+      }
+    ]
+  }
+  {% endschema %}
+</section>
