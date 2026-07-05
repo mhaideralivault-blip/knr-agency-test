@@ -65,6 +65,23 @@
   margin: 0;
 }
 
+.knr-test .header__icon--menu .icon,
+.knr-test .header__icon--menu svg {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+  position: static !important;
+}
+
+.knr-test .header__icon--menu .icon-close,
+.knr-test .header__icon--menu .header__icon-close,
+.knr-test details .header__icon-close,
+.knr-test details[open] .header__icon-close {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
 .knr-test .header__icon--search svg,
 .knr-test .header__icon--account svg,
 .knr-test .header__cart svg,
