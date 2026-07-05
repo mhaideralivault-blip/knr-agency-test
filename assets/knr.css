@@ -120,10 +120,18 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-end;
+    gap: 8px;
   }
 
   .knr-test .header__icon--cart {
     order: 1;
+    margin-right: 0 !important;
+  }
+
+  .knr-test .header__icon--menu {
+    order: 2;
+    margin-left: 0 !important;
+    position: static !important;
   }
 
   .knr-test header-drawer {
