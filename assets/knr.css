@@ -2,3 +2,78 @@
 
     background: #DFDBD6 !important;
 }
+
+/* Header overrides */
+@media screen and (min-width: 990px) {
+  .header--top-center .header__inline-menu,
+  .header--middle-center .header__inline-menu {
+    justify-self: center;
+  }
+
+  .header--top-center .header__inline-menu > .list-menu--inline,
+  .header--middle-center .header__inline-menu > .list-menu--inline {
+    justify-content: center;
+  }
+}
+
+.header__icon,
+.header__menu-item,
+.header__menu-item span,
+.header__inline-menu a.header__menu-item {
+  color: #ffffff !important;
+}
+
+.header__icons {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.header__icon .svg-wrapper,
+.header__icon--marker .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__icon--marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__icon--search .svg-wrapper,
+.header__icon--account .svg-wrapper,
+.header__icon--cart .svg-wrapper,
+.header__icon--marker .svg-wrapper {
+  width: 44px;
+  height: 44px;
+}
+
+.header__icon--search svg,
+.header__icon--account svg,
+.header__icon--cart svg,
+.header__icon--marker svg {
+  width: 100%;
+  height: 100%;
+}
+
+.header__icon--search svg path,
+.header__icon--account svg path,
+.header__icon--cart svg path,
+.header__icon--marker svg path {
+  stroke: #ffffff;
+}
+
+.header__menu-item,
+.header__menu-item span {
+  color: #ffffff;
+}
+
+/* Ensure header nav links are white on desktop */
+.header--top-center .header__menu-item,
+.header--middle-center .header__menu-item,
+.header--top-center .header__menu-item span,
+.header--middle-center .header__menu-item span {
+  color: #ffffff;
+}
