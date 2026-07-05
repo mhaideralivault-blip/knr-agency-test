@@ -17,7 +17,7 @@
 .knr-test .header__icons {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 9.5px;
 }
 
 .knr-test .header__icon {
@@ -26,10 +26,10 @@
   justify-content: center;
   line-height: 0;
   vertical-align: middle;
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  min-height: 44px;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
   padding: 0;
   flex: 0 0 auto;
 }
@@ -111,6 +111,14 @@
 
 /* Desktop-only styles */
 @media screen and (min-width: 990px) {
+  .knr-test .header__icons {
+    gap: 9.5px;
+  }
+
+  .knr-test .header__icons > header-drawer {
+    display: none;
+  }
+
   .knr-test .header--top-center .header__inline-menu,
   .knr-test .header--middle-center .header__inline-menu,
   .knr-test .header--middle-left .header__inline-menu,
@@ -153,7 +161,7 @@
     flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-end;
-    gap: 12px;
+    gap: 5px;
   }
 
   .knr-test .header__icons > * {
