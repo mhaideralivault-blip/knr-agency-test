@@ -39,6 +39,11 @@
   text-align: center;
   text-transform: uppercase;
   color: #000000;
-  margin: 0 8px 0 0;
+  margin: 0 12px 0 0;
   white-space: nowrap;
+}
+
+/* Remove margin from last badge */
+.product__badge:last-child {
+  margin-right: 0;
 }
