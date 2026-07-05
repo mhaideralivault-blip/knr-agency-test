@@ -116,7 +116,10 @@
   }
 
   .knr-test .header__icons {
+    flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   .knr-test .header__icon--cart {
