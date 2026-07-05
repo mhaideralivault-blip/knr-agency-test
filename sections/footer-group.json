@@ -55,10 +55,10 @@
         "currency_label": "France (€)",
         "language_label": "Français",
         "copyright_text": "© 2026 Maison Célestine. Tous droits réservés.",
-        "social_facebook_link": "",
-        "social_instagram_link": "",
-        "social_tiktok_link": "",
-        "social_linkedin_link": ""
+        "social_facebook_link": "#",
+        "social_instagram_link": "#",
+        "social_tiktok_link": "#",
+        "social_linkedin_link": "#"
       }
     },
     "footer": {
