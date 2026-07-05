@@ -11,8 +11,59 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "knr_footer_JaTrxV": {
+      "type": "knr-footer",
+      "name": "Luxury Footer",
+      "settings": {
+        "brand_wordmark": "maison célestine",
+        "column_1_heading": "Découvrir",
+        "column_1_link_1_text": "Acheter",
+        "column_1_link_1_url": "",
+        "column_1_link_2_text": "Notre histoire",
+        "column_1_link_2_url": "",
+        "column_1_link_3_text": "Science",
+        "column_1_link_3_url": "",
+        "column_1_link_4_text": "Presse",
+        "column_1_link_4_url": "",
+        "column_1_link_5_text": "Où nous trouver",
+        "column_1_link_5_url": "",
+        "column_2_heading": "Service client",
+        "column_2_link_1_text": "Mon compte",
+        "column_2_link_1_url": "",
+        "column_2_link_2_text": "Suivre mon colis",
+        "column_2_link_2_url": "",
+        "column_2_link_3_text": "Livraison & retour",
+        "column_2_link_3_url": "",
+        "column_2_link_4_text": "FAQs",
+        "column_2_link_4_url": "",
+        "column_2_link_5_text": "Nous contacter",
+        "column_2_link_5_url": "",
+        "column_3_heading": "Légal & Transparence",
+        "column_3_link_1_text": "Conditions générales de vente",
+        "column_3_link_1_url": "",
+        "column_3_link_2_text": "Mentions légales",
+        "column_3_link_2_url": "",
+        "column_3_link_3_text": "Paramètre des cookies",
+        "column_3_link_3_url": "",
+        "column_3_link_4_text": "Accessibilité",
+        "column_3_link_4_url": "",
+        "about_heading": "À propos de Maison Célestine",
+        "about_text": "Maison Célestine est une marque de soins anti-âge haut de gamme formulée autour d’actifs rares et certifiés biologiques, guidée par une expertise médicale et un rituel simple, précis et efficace.",
+        "certification_text": "Certifié COSMOS ORGANIC par ECOCERT Greenlife",
+        "certificate_link_text": "Voir le certificat",
+        "certificate_link_url": "",
+        "currency_label": "France (€)",
+        "language_label": "Français",
+        "copyright_text": "© 2026 Maison Célestine. Tous droits réservés.",
+        "social_facebook_link": "",
+        "social_instagram_link": "",
+        "social_tiktok_link": "",
+        "social_linkedin_link": ""
+      }
+    },
     "footer": {
       "type": "footer",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
@@ -30,6 +81,7 @@
     }
   },
   "order": [
+    "knr_footer_JaTrxV",
     "footer"
   ]
 }
