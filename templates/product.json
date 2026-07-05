@@ -12,13 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
@@ -48,23 +41,15 @@
         "description": {
           "type": "description",
           "settings": {}
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
         }
       },
       "block_order": [
-        "vendor",
         "title",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "description",
-        "share"
+        "description"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -92,6 +77,15 @@
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 0
+      }
+    },
+    "knr_serum_spotlight_Ejfkay": {
+      "type": "knr-serum-spotlight",
+      "name": "Serum Spotlight",
+      "settings": {
+        "body_text": "Fusionnant l’huile de rosier muscat, le rétinol végétal et l’extrait de cactus, notre sérum pénètre en profondeur pour stimuler le renouvellement cellulaire, atténuer les rides et redonner à la peau son éclat et sa fermeté naturels.",
+        "author": "Sophie M.",
+        "text_color": "#FFFFFF"
       }
     },
     "knr_how_to_use_GFVH99": {
@@ -137,6 +131,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -157,6 +152,7 @@
   "order": [
     "main",
     "disclosures",
+    "knr_serum_spotlight_Ejfkay",
     "knr_how_to_use_GFVH99",
     "related-products"
   ]
