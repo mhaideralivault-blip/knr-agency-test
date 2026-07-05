@@ -40,7 +40,15 @@
 .header__icons {
   display: flex;
   align-items: center;
-  gap: 9.5px;
+  gap: 3px !important;
+}
+
+.header__icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 0 !important;
+  vertical-align: middle !important;
 }
 
 .header__icon .svg-wrapper,
@@ -48,6 +56,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 !important;
 }
 
 .header__icon--marker {
