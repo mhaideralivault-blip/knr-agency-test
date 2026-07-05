@@ -5,7 +5,10 @@
 
 /* Header overrides */
 @media screen and (min-width: 990px) {
-  .header__inline-menu {
+  .header--top-center .header__inline-menu,
+  .header--middle-center .header__inline-menu,
+  .header--middle-left .header__inline-menu,
+  .header--top-left .header__inline-menu {
     justify-self: center !important;
     margin-left: 0 !important;
     display: flex !important;
@@ -13,10 +16,17 @@
     width: 100% !important;
   }
 
-  .header__inline-menu > .list-menu--inline {
+  .header--top-center .header__inline-menu > .list-menu--inline,
+  .header--middle-center .header__inline-menu > .list-menu--inline,
+  .header--middle-left .header__inline-menu > .list-menu--inline,
+  .header--top-left .header__inline-menu > .list-menu--inline {
     justify-content: center !important;
     margin: 0 auto !important;
     width: auto !important;
+  }
+
+  .header--middle-left {
+    grid-template-columns: auto 1fr auto !important;
   }
 }
 
