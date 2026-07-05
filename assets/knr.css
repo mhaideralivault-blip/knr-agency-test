@@ -10,12 +10,13 @@
     margin-left: 0 !important;
     display: flex !important;
     justify-content: center !important;
-    width: 100%;
+    width: 100% !important;
   }
 
   .header__inline-menu > .list-menu--inline {
     justify-content: center !important;
-    width: 100%;
+    margin: 0 auto !important;
+    width: auto !important;
   }
 }
 
