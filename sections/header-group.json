@@ -25,6 +25,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -33,6 +34,17 @@
         "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false
+      }
+    },
+    "knr_announcement_bar_TxJwtH": {
+      "type": "knr-announcement-bar",
+      "name": "KNR Announcement Bar",
+      "settings": {
+        "main_text": "Livraison estimée sous 48h",
+        "highlighted_text": "consectetur.",
+        "background_color": "#000000",
+        "text_color": "#FFFFFF",
+        "border_width": 1
       }
     },
     "header": {
@@ -57,6 +69,7 @@
   },
   "order": [
     "announcement-bar",
+    "knr_announcement_bar_TxJwtH",
     "header"
   ]
 }
