@@ -17,7 +17,7 @@
 .knr-test .header__icons {
   display: flex;
   align-items: center;
-  gap: 9.5px;
+  gap: 12px;
 }
 
 .knr-test .header__icon {
@@ -26,11 +26,12 @@
   justify-content: center;
   line-height: 0;
   vertical-align: middle;
-  width: auto;
-  height: auto;
-  min-width: 0;
-  min-height: 0;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0;
+  flex: 0 0 auto;
 }
 
 .knr-test .header__icon .svg-wrapper,
@@ -47,6 +48,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.knr-test .header__icons > header-drawer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.knr-test .header__icon--menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+  margin: 0;
 }
 
 .knr-test .header__icon--search svg,
@@ -131,19 +147,12 @@
     order: 1;
     margin-right: 0 !important;
   }
+  .knr-test .header__icon--cart{
 
+  margin-right: 0;
+
+}
   .knr-test .header__icons > header-drawer {
     order: 2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .knr-test .header__icon--menu {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: static !important;
-    margin-left: 0 !important;
   }
 }
