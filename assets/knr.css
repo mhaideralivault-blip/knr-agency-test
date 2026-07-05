@@ -181,6 +181,7 @@
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
+    margin: 0;
   }
 
   .knr-test .header__icons > header-drawer > details,
