@@ -12,6 +12,12 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "breadcrumbs_kGEUcB": {
+          "type": "breadcrumbs",
+          "settings": {
+            "breadcrumb_text": "Soins anti-âge / Collection Cactus"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -44,6 +50,7 @@
         }
       },
       "block_order": [
+        "breadcrumbs_kGEUcB",
         "title",
         "price",
         "variant_picker",
@@ -85,7 +92,7 @@
       "settings": {
         "body_text": "Fusionnant l’huile de rosier muscat, le rétinol végétal et l’extrait de cactus, notre sérum pénètre en profondeur pour stimuler le renouvellement cellulaire, atténuer les rides et redonner à la peau son éclat et sa fermeté naturels.",
         "author": "Sophie M.",
-        "text_color": "#FFFFFF"
+        "text_color": "#ffffff"
       }
     },
     "knr_how_to_use_GFVH99": {
