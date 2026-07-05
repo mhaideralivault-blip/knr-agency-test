@@ -1,0 +1,497 @@
+/* ==========================================================================
+   KNR Product Page Custom Styles
+   ========================================================================== */
+
+:root {
+  --knr-bg-light: #DFDBD6;
+  --knr-text-primary: #000;
+  --knr-text-secondary: #666;
+  --knr-border-light: #e8e8e8;
+  --knr-accent: #000;
+  --knr-max-width: 1440px;
+  --knr-image-width: 936px;
+  --knr-content-width: 504px;
+}
+
+/* Product Main Container */
+.product-component {
+  width: 100%;
+}
+
+.page-width {
+  max-width: var(--knr-max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Product Grid Layout */
+.product {
+  display: grid;
+  grid-template-columns: var(--knr-image-width) 1fr;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+/* Product Media Wrapper */
+.product__media-wrapper {
+  width: 100%;
+  background-color: var(--knr-bg-light);
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product__media-wrapper .deferred-media,
+.product__media-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.product-media-container {
+  width: 100%;
+  background-color: var(--knr-bg-light);
+  border: none;
+}
+
+.product-media-container__image {
+  width: 100% !important;
+  border: none !important;
+}
+
+/* Product Info Wrapper */
+.product__info-wrapper {
+  width: var(--knr-content-width);
+  padding: 0;
+}
+
+.product__info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Product Title */
+.product__title {
+  margin: 0;
+  padding: 0;
+}
+
+.product__title h1,
+.product__title h2 {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--knr-text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Price Section */
+.price {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--knr-text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+.price-item {
+  display: inline;
+}
+
+.price-item__price {
+  font-size: 24px;
+}
+
+/* Rating */
+.rating-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating-star {
+  color: var(--knr-accent);
+  font-size: 16px;
+}
+
+.rating-text,
+.rating-count {
+  font-size: 14px;
+  color: var(--knr-text-secondary);
+  margin: 0;
+}
+
+/* Variant Picker Section */
+.product-form__input {
+  margin-top: 24px;
+  padding: 0;
+}
+
+.product-form__input label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: var(--knr-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Swatch Input */
+.swatch-input-wrapper {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.swatch-input {
+  min-width: auto;
+  padding: 10px 24px;
+  border: 1px solid var(--knr-border-light);
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.swatch-input:hover {
+  border-color: var(--knr-accent);
+}
+
+.swatch-input.selected,
+.swatch-input[aria-checked="true"] {
+  background: var(--knr-accent);
+  color: #fff;
+  border-color: var(--knr-accent);
+}
+
+/* Quantity Selector */
+.product-form__quantity {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.quantity__label {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 16px 0;
+}
+
+.quantity {
+  display: flex;
+  border: 1px solid var(--knr-border-light);
+  width: fit-content;
+}
+
+.quantity__button {
+  background: #fff;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.quantity__button:hover {
+  background: #f5f5f5;
+}
+
+.quantity__input {
+  border: none;
+  background: #fff;
+  padding: 12px 24px;
+  font-size: 14px;
+  width: 60px;
+  text-align: center;
+  border-left: 1px solid var(--knr-border-light);
+  border-right: 1px solid var(--knr-border-light);
+}
+
+.quantity__input:focus {
+  outline: none;
+}
+
+/* Buy Button */
+.product-form__submit {
+  width: 100%;
+  padding: 16px 32px;
+  background: var(--knr-accent);
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 24px;
+}
+
+.product-form__submit:hover {
+  background: #333;
+}
+
+/* Description Section */
+.product__description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--knr-text-secondary);
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--knr-border-light);
+}
+
+/* Accordion / Collapsible Tabs */
+.product__accordion,
+.accordion {
+  margin-top: 24px;
+  border-top: 1px solid var(--knr-border-light);
+}
+
+.accordion details {
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--knr-border-light);
+}
+
+.accordion details:last-child {
+  border-bottom: none;
+}
+
+.accordion summary {
+  padding: 20px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.accordion summary:hover {
+  color: var(--knr-accent);
+}
+
+.accordion__title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.accordion__content {
+  padding: 0 0 24px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--knr-text-secondary);
+}
+
+/* Benefits / Features List */
+.product-benefits {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--knr-border-light);
+}
+
+.product-benefits__title {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.product-benefits__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.product-benefits__item {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--knr-text-secondary);
+}
+
+.product-benefits__item::before {
+  content: "•";
+  margin-right: 12px;
+  color: var(--knr-accent);
+}
+
+/* Ingredients / Actifs */
+.product-ingredients {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--knr-border-light);
+}
+
+.product-ingredients__title {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.product-ingredients__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.product-ingredients__item {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--knr-text-secondary);
+}
+
+/* Complementary Products */
+.complementary-products {
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid var(--knr-border-light);
+}
+
+.complementary-products__title {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.complementary-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .product {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .product__info-wrapper {
+    width: 100%;
+  }
+
+  .product__media-wrapper {
+    width: 100%;
+  }
+
+  .product__title h1,
+  .product__title h2 {
+    font-size: 36px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 640px) {
+  .page-width {
+    padding: 0 16px;
+  }
+
+  .product {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .product__media-wrapper {
+    width: 100%;
+  }
+
+  .product__info-wrapper {
+    width: 100%;
+    padding: 0;
+  }
+
+  .product__title h1,
+  .product__title h2 {
+    font-size: 28px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .product-form__input label {
+    font-size: 12px;
+  }
+
+  .product-form__submit {
+    padding: 14px 24px;
+    font-size: 12px;
+  }
+
+  .accordion summary {
+    padding: 16px 0;
+  }
+
+  .complementary-slider {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+}
+
+/* Remove default borders and gaps */
+.product__media-wrapper img {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-media {
+  border: none !important;
+}
+
+/* Utilities */
+.visibility-hidden {
+  display: none;
+}
+
+.rte {
+  word-break: break-word;
+}
+
+.rte p {
+  margin: 0 0 16px 0;
+}
+
+.rte ul,
+.rte ol {
+  margin: 0 0 16px 0;
+  padding-left: 24px;
+}
+
+.rte li {
+  margin-bottom: 8px;
+}
